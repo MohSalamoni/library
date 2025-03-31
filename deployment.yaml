@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: team3-app
-        image: mnassifnashed/my-flask-app:latest
+        image: msalamoni/my-flask-app:latest
         imagePullPolicy: Always # Use 'IfNotPresent' or 'Always' for production
         ports:
         - containerPort: 5000
