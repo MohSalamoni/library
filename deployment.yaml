@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: team3-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: team3-app
+  template:
+    metadata:
+      labels:
+        app: team3-app
+    spec:
+      containers:
+      - name: team3-app
+        image: mnassifnashed/my-flask-app:latest
+        imagePullPolicy: Always # Use 'IfNotPresent' or 'Always' for production
+        ports:
+        - containerPort: 5000

@@ -1,0 +1,77 @@
+{
+    "B1": {
+        "name": "Hassan",
+        "status": "Available",
+        "count": 3
+    },
+    "B7": {
+        "name": "Ali 2",
+        "status": "Borrowed",
+        "count": 5
+    },
+    "B8": {
+        "name": "Osama",
+        "status": "Borrowed",
+        "count": 5
+    },
+    "B10": {
+        "name": "Ashraf",
+        "status": "Borrowed",
+        "count": 5
+    },
+    "B20": {
+        "name": "Sabry",
+        "status": "Available",
+        "count": 2
+    },
+    "B21": {
+        "name": "Ahmed",
+        "status": "Available",
+        "count": 2
+    },
+    "B22": {
+        "name": "Mohsen",
+        "status": "Available",
+        "count": 3
+    },
+    "B23": {
+        "name": "Devops",
+        "status": "Borrowed",
+        "count": 4
+    },
+    "B24": {
+        "name": "Devops Advanced",
+        "status": "Available",
+        "count": 2
+    },
+    "B25": {
+        "name": "Devops Advanced 2",
+        "status": "Available",
+        "count": 2
+    },
+    "B26": {
+        "name": "Devops Advanced 3",
+        "status": "Available",
+        "count": 3
+    },
+    "B27": {
+        "name": "Devops 2",
+        "status": "Available",
+        "count": 4
+    },
+    "B28": {
+        "name": "Devops 3",
+        "status": "Available",
+        "count": 4
+    },
+    "B29": {
+        "name": "Devops sab 3",
+        "status": "Available",
+        "count": 4
+    },
+    "B33": {
+        "name": "team3",
+        "status": "Available",
+        "count": 4
+    }
+}

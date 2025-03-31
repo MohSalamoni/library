@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete a Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .delete-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .delete-container h1 {
+                margin-bottom: 20px;
+            }
+
+            .delete-container input[type="text"] {
+                padding: 10px;
+                width: 80%;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+            .button-container button,
+            .button-container a {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+                .button-container button:hover,
+                .button-container a:hover {
+                    background-color: #0056b3;
+                }
+
+                .button-container button.delete {
+                    background-color: #dc3545;
+                }
+
+                    .button-container button.delete:hover {
+                        background-color: #c82333;
+                    }
+        /* Message styles */
+        .message {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+            .message.success {
+                color: green;
+            }
+
+            .message.error {
+                color: red;
+            }
+    </style>
+</head>
+<body background = 'https://png.pngtree.com/background/20230527/original/pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg'>
+    <div class="delete-container">
+        <h1>Delete a Book</h1>
+        
+        <!-- Display Message -->
+        {% if message %}
+        <div class="message {{ 'success' if 'successfully' in message else 'error' }}">
+            {{ message }}
+        </div>
+        {% endif %}
+
+        <!-- Form for deleting a book -->
+        <form action="{{ url_for('delete_book') }}" method="POST">
+            <input type="text" name="book_id" placeholder="Enter Book ID (e.g., B2)" required>
+            <div class="button-container">
+                <button type="submit" class="delete">Delete</button>
+                <a href="{{ url_for('index') }}">Home</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

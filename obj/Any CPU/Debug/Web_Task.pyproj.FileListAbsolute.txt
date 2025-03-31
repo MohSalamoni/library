@@ -1,0 +1,3 @@
+D:\Courses\DevOps CLS Learning\Web_Task\obj\Any CPU\Debug\Web_Task.pyproj.CoreCompileInputs.cache
+D:\Courses\DevOps CLS Learning\Web_Task\bin\Microsoft.PythonTools.WebRole.dll
+D:\Courses\DevOps CLS Learning\Web_Task\bin\wfastcgi.py

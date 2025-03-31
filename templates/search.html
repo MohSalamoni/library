@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for a Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .search-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .search-container h1 {
+                margin-bottom: 20px;
+                font-size: 24px;
+            }
+
+            .search-container input[type="text"] {
+                padding: 10px;
+                width: 80%;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+            .button-container button,
+            .button-container a {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+                .button-container button:hover,
+                .button-container a:hover {
+                    background-color: #0056b3;
+                }
+
+                .button-container a.home-button {
+                    background-color: #28a745;
+                }
+
+                    .button-container a.home-button:hover {
+                        background-color: #218838;
+                    }
+
+        .book-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+            .book-item h3 {
+                color: #333;
+            }
+
+            .book-item p {
+                color: #555;
+            }
+    </style>
+</head>
+<body background='https://png.pngtree.com/background/20230527/original/pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg'>
+    <div class="search-container">
+        <h1>Search for a Book</h1>
+
+        <!-- Search Form -->
+        <form action="{{ url_for('search_page') }}" method="POST">
+            <input type="text" name="book_name" placeholder="Enter book name" required>
+            <button type="submit">Search</button>
+        </form>
+
+
+    </div>
+    <div class="book-list">
+
+        <!-- Display Book Information if found -->
+        {% if books %}
+        {% for book_id, book in books.items() %}
+        <div class="book-item">
+            <h3>{{ book.name }}</h3>
+            <p>ID: {{ book_id }}</p>
+            <p>Status: {{ book.status }}</p>
+            <p>Count: {{ book.count }}</p>
+        </div>
+        {% endfor %}
+        {% elif search_query %}
+        <p>No books found matching "{{ search_query }}".</p>
+        {% endif %}
+
+
+
+    </div>
+    <br><br>
+
+    <div class="button-container" id="back_home_button">
+        <a href="{{ url_for('index') }}" class="home-button">Back to Home</a>
+    </div>
+</body>
+</html>

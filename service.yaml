@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: team3-app-service
+spec:
+  selector:
+    app: team3-app
+  ports:
+    - protocol: TCP
+      port: 80 # Expose port 5000 externally
+      targetPort: 5000 # Connect to container's port 5000
+  type: LoadBalancer

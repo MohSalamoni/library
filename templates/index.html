@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Information jenkINS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        
+</head>
+<body background = 'https://png.pngtree.com/background/20230527/original/pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg'>
+        <div class="container">
+            <h1>Books Information jenkins</h1>
+            <div class="button-container">
+                <a href="{{ url_for('search_page') }}" class="button">Search for a Book</a>
+                <a href="{{ url_for('modify_page') }}" class="button">Modify a Book</a>
+                <a href="{{ url_for('add_page') }}" class="button">Add a Book</a>
+                <a href="{{ url_for('delete_book') }}" class="button">Delete a Book</a>
+                <a href="{{ url_for('logout') }}" class="button">Logout</a>
+            </div>
+
+            <div class="book-list">
+                {% for book_id, book in books.items() %}
+                <div class="book-item">
+                    <h3>{{ book.name }}</h3>
+                    <p>ID: {{ book_id }}</p>
+                    <p>Status: {{ book.status }}</p>
+                    <p>Count: {{ book.count }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</body>
+</html>
